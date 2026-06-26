@@ -6,19 +6,16 @@ const app = express();
 const { Pool } = pg;
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === "production"
-    ? { rejectUnauthorized: false }
-    : false
+  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false
 });
 
 app.use(cors({
   origin: allowedOrigin === "*" ? true : allowedOrigin
 }));
-
 app.use(express.json());
+app.use(express.static("public"));
 
 async function setupDatabase() {
   await pool.query(`
@@ -34,19 +31,11 @@ async function setupDatabase() {
 
 function cleanText(value, fallback, maxLength) {
   const text = String(value || "").trim();
-
-  if (!text) {
-    return fallback;
-  }
-
-  return text.slice(0, maxLength);
+  return (text || fallback).slice(0, maxLength);
 }
 
-app.get("/", (req, res) => {
-  res.json({
-    ok: true,
-    message: "Guestbook backend is running."
-  });
+app.get("/health", (req, res) => {
+  res.json({ ok: true, message: "Guestbook backend is running." });
 });
 
 app.get("/entries", async (req, res) => {
@@ -71,11 +60,6 @@ app.post("/entries", async (req, res) => {
     const website = cleanText(req.body.website, "", 200);
     const message = cleanText(req.body.message, "Signing the guestbook!", 1000);
 
-    if (!message) {
-      res.status(400).json({ error: "Message is required." });
-      return;
-    }
-
     const result = await pool.query(
       `
         INSERT INTO guestbook_entries (name, website, message)
@@ -97,7 +81,7 @@ const port = process.env.PORT || 3000;
 setupDatabase()
   .then(() => {
     app.listen(port, () => {
-      console.log(`Guestbook backend running on port ${port}`);
+      console.log(`Guestbook running on port ${port}`);
     });
   })
   .catch((error) => {
