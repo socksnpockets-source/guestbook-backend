@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guestbook - socksandpockets.neocities.org</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="guestbook-page">
+  <header class="top-strip">
+    <div class="brand-bubble" aria-label="Site name">
+      <span class="brand-kicker">outta site!</span>
+      <strong>socksandpockets.neocities.org</strong>
+      <em>Register Now</em>
+    </div>
+
+    <nav class="top-nav" aria-label="Main">
+      <a href="https://socksandpockets.neocities.org/index.html#hot"><span>?</span>what's hot</a>
+      <a href="https://socksandpockets.neocities.org/index.html#webring"><span>!</span>webring</a>
+      <a href="https://socksandpockets.neocities.org/index.html#contact"><span>@</span>contact</a>
+      <a href="https://socksandpockets.neocities.org/index.html#shop"><span>$</span>shop</a>
+      <a href="https://socksandpockets.neocities.org/index.html"><span>*</span>home</a>
+    </nav>
+  </header>
+
+  <div class="ticker">
+    Be Sure To Sign The Guestbook, Grab A Button, And Join The Webring! Click <a href="#guestbookForm">HERE!!!</a>
+  </div>
+
+  <div class="page-shell guestbook-shell">
+    <aside class="left-rail" aria-label="Site sections">
+      <p class="date" id="currentDate">June 25, 2026</p>
+      <section class="parents-box">
+        <h2>Visitors, click here for important info</h2>
+        <p>Check here to review site notes, updates, and totally important policies.</p>
+        <a href="#register" class="register-button">Register</a>
+      </section>
+
+      <h3 class="rail-label">channels</h3>
+      <nav class="button-stack">
+        <a href="https://socksandpockets.neocities.org/index.html#about">About Me</a>
+        <a href="https://socksandpockets.neocities.org/index.html#blog">Site Log</a>
+        <a href="https://socksandpockets.neocities.org/index.html#calendar">Update Calendar</a>
+        <a href="/">Guestbook</a>
+        <a href="https://socksandpockets.neocities.org/index.html#buttons">Button Wall</a>
+        <a href="https://socksandpockets.neocities.org/index.html#blinkies">Blinkies</a>
+        <a href="https://socksandpockets.neocities.org/index.html#zine">Web Zine</a>
+        <a href="https://socksandpockets.neocities.org/index.html#shrines">Shrines</a>
+        <a href="https://socksandpockets.neocities.org/index.html#diary">Diary Zone</a>
+        <a href="https://socksandpockets.neocities.org/index.html#webring">Join Webring</a>
+        <a href="https://socksandpockets.neocities.org/index.html#mail">Contact Box</a>
+        <a href="https://socksandpockets.neocities.org/index.html#links">Cool Links</a>
+        <a href="https://socksandpockets.neocities.org/index.html#photos">Pixel Gallery</a>
+        <a href="https://socksandpockets.neocities.org/index.html#read">Read Me</a>
+        <a href="https://socksandpockets.neocities.org/index.html#downloads">Downloads</a>
+        <a href="https://socksandpockets.neocities.org/index.html#speak">Speak Out</a>
+        <a href="https://socksandpockets.neocities.org/index.html#projects">Projects</a>
+        <a href="https://socksandpockets.neocities.org/index.html#resources">Free Stuff</a>
+        <a href="https://socksandpockets.neocities.org/index.html#reviews">Site Reviews</a>
+        <a href="https://socksandpockets.neocities.org/index.html#secret">Secret Page</a>
+        <a href="https://socksandpockets.neocities.org/index.html#hot">New Stuff</a>
+        <a href="https://socksandpockets.neocities.org/index.html#map">Site Map</a>
+        <a href="https://socksandpockets.neocities.org/index.html">Home</a>
+      </nav>
+
+      <a class="club-card" href="https://socksandpockets.neocities.org/index.html#webring">
+        <span class="key">o--</span>
+        <span>join the<br>webring</span>
+      </a>
+
+      <div class="talk-card">
+        <a href="/">sign book</a>
+        <a href="https://socksandpockets.neocities.org/index.html#mail">email me</a>
+      </div>
+
+      <a class="cool-stuff" href="https://socksandpockets.neocities.org/index.html#photos">
+        <span>pixels,<br>cool<br>stuff</span>
+        <span class="photo-dot"></span>
+      </a>
+    </aside>
+
+    <main class="content guestbook-content">
+      <p class="guestbook-top-link"><a href="https://socksandpockets.neocities.org/index.html">Click Here</a></p>
+
+      <section class="guestbook-intro">
+        <h1><span>have questions?</span><br>sign the guestbook</h1>
+        <p>
+          Thank you for visiting socksandpockets.neocities.org. This section is where you can leave a tiny note,
+          say where you found the site, trade a button, or just tell me what page I should update next.
+        </p>
+        <p>Please fill out the form below and press the "send" button.</p>
+      </section>
+
+      <form class="guestbook-form" id="guestbookForm">
+        <label for="guestName">First Name:</label>
+        <input id="guestName" name="guestName" type="text">
+
+        <label for="guestUrl">Website URL (optional):</label>
+        <input id="guestUrl" name="guestUrl" type="url">
+
+        <label for="guestMessage">Enter Message Below:</label>
+        <textarea id="guestMessage" name="guestMessage" rows="8"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <section class="guestbook-questions" aria-label="Guestbook entries">
+        <div class="guestbook-face"></div>
+        <h2>Your guestbook entries...</h2>
+      </section>
+
+      <section class="guestbook-entries" id="guestbookEntries">
+        <article>
+          <h3>Loading...</h3>
+          <p>Waking up the guestbook.</p>
+        </article>
+      </section>
+
+      <footer class="guestbook-footer">
+        <p>Use of this web site constitutes acceptance of the <a href="#terms">Terms of Use</a></p>
+        <p>Copyright 2026 socksandpockets.neocities.org. Hand-coded with table-adjacent feelings.</p>
+        <p><strong>Web Site Development by Bianca.</strong></p>
+      </footer>
+    </main>
+
+    <aside class="guestbook-purple" aria-hidden="true"></aside>
+  </div>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
