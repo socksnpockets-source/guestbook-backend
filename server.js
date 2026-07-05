@@ -38,6 +38,24 @@ app.get("/health", (req, res) => {
   res.json({ ok: true, message: "Guestbook backend is running." });
 });
 
+app.get("/cleanup-codex-test", async (req, res) => {
+  try {
+    const result = await pool.query(
+      `
+        DELETE FROM guestbook_entries
+        WHERE name = $1 AND message = $2
+        RETURNING id
+      `,
+      ["Codex Test", "Testing guestbook save."]
+    );
+
+    res.json({ ok: true, deleted: result.rowCount });
+  } catch (error) {
+    console.error("Could not clean up test entry:", error);
+    res.status(500).json({ error: "Could not clean up test entry." });
+  }
+});
+
 app.get("/entries", async (req, res) => {
   try {
     const result = await pool.query(`
